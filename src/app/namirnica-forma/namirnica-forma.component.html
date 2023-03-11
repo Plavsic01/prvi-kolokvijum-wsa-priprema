@@ -1,0 +1,22 @@
+<form (submit)="dodajNamirnicu()" ngNativeValidate>
+
+    <div>
+        <label>Naziv <input type="text" name="namirnicaNaziv" [(ngModel)]="namirnica.naziv"></label>
+    </div>
+
+    <div>
+        <label>Cena <input type="number" name="cena" [(ngModel)]="namirnica.cena"></label>
+    </div>
+
+    <div *ngIf="rezim === 'dodavanje' else izmena">
+        <button type="submit">Dodaj</button>
+    </div>
+
+</form>
+
+
+<ng-template #izmena>
+    <button type="submit">Izmeni</button>
+    <button (click)="reset()">Reset</button>
+</ng-template>
+

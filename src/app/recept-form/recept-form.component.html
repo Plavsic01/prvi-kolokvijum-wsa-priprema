@@ -1,0 +1,35 @@
+<form (submit)="dodajRecept()" ngNativeValidate>
+
+
+    <div>
+        <label>Naziv <input type="text" name="receptNaziv" [(ngModel)]="recept.naziv"></label>
+    </div>
+
+    <div>
+        <select name="namirnica" [compareWith]="compareFn" [(ngModel)]="recept.namirnica">
+            <option value="" disabled>Izaberi namirnicu</option>
+            <option *ngFor="let namirnica of namirnice" [ngValue]="namirnica">
+                {{namirnica.naziv}}
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <label>Opis <input type="text" name="receptOpis" [(ngModel)]="recept.opis"></label>
+    </div>
+
+    <div>
+        <label>Slika <input type="text" name="receptSlika" [(ngModel)]="recept.slika"></label>
+    </div>
+
+    <div *ngIf="rezim === 'dodavanje' else izmena">
+        <button type="submit">Dodaj</button>
+    </div>
+
+</form>
+
+
+<ng-template #izmena>
+    <button type="submit">Izmeni</button>
+    <button (click)="reset()">Reset</button>
+</ng-template>

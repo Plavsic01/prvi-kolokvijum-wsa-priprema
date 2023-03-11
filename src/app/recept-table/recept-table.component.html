@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Naziv</th>
+            <th>Namirnica</th>
+            <th>Opis</th>
+            <th>Slika</th>
+            <th>Akcije</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let recept of recepti;index as i">
+            <td>{{recept.id}}</td>
+            <td>{{recept.naziv}}</td>
+            <td>{{recept.namirnica | json}}</td>
+            <td>{{recept.opis}}</td>
+            <td>{{recept.slika}}</td>
+            <td>
+                <button (click)="izmeni(i,recept)">Izmeni</button>
+                <button (click)="ukloni(i)">Ukloni</button>
+            </td>
+        </tr>        
+    </tbody>
+
+</table>
