@@ -6,7 +6,7 @@
     </div>
 
     <div>
-        <select name="namirnica" [compareWith]="compareFn" [(ngModel)]="recept.namirnica">
+        <select name="namirnica" [compareWith]="compareFn" [(ngModel)]="recept.namirnica" required>
             <option value="" disabled>Izaberi namirnicu</option>
             <option *ngFor="let namirnica of namirnice" [ngValue]="namirnica">
                 {{namirnica.naziv}}

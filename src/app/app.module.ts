@@ -8,6 +8,7 @@ import { ReceptFormComponent } from './recept-form/recept-form.component';
 import { FormsModule } from '@angular/forms';
 import { NamirnicaTabelaComponent } from './namirnica-tabela/namirnica-tabela.component';
 import { NamirnicaFormaComponent } from './namirnica-forma/namirnica-forma.component';
+import { ObrisaneNamirniceTabelaComponent } from './obrisane-namirnice-tabela/obrisane-namirnice-tabela.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NamirnicaFormaComponent } from './namirnica-forma/namirnica-forma.compo
     ReceptTableComponent,
     ReceptFormComponent,
     NamirnicaTabelaComponent,
-    NamirnicaFormaComponent
+    NamirnicaFormaComponent,
+    ObrisaneNamirniceTabelaComponent
   ],
   imports: [
     BrowserModule,

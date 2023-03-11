@@ -10,3 +10,6 @@
 <app-namirnica-tabela [namirnice]="namirnice" (onIzmeni)="izmeniNamirnicu($event)" (onUkloni)="ukloniNamirnicu($event)"></app-namirnica-tabela>
 <br>
 <app-namirnica-forma [namirnica]="namirnicaZaIzmenu" [rezim]="indexZaIzmenuNamirnica === null ? 'dodavanje' : 'izmena'" (onDodaj)="kreirajNamirnicu($event)" (onReset)="resetujNamirnicu()"></app-namirnica-forma>
+<hr>
+<br>
+<app-obrisane-namirnice-tabela [obrisaneNamirnice]="obrisaneNamirnice" (onFizickoUklanjanje)="ukloniFizicki($event)" (onVrati)="vratiNamirnicu($event)"></app-obrisane-namirnice-tabela>

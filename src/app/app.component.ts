@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Namirnica } from './model/namirnica';
 import { Recept } from './model/recept';
 
@@ -16,6 +16,8 @@ export class AppComponent {
   indexZaIzmenuRecept:number | null = null;
   indexZaIzmenuNamirnica:number | null = null;
   
+  obrisaneNamirnice:Namirnica[] = [];
+
   namirnice:Namirnica[] = [
     {
       id:1,naziv:"banana",cena:200.0
@@ -81,7 +83,18 @@ export class AppComponent {
   }
 
   ukloniNamirnicu(index:number){
+    this.obrisaneNamirnice.push(this.namirnice[index]);
     this.namirnice.splice(index,1);
+  }
+
+  ukloniFizicki(index:number){
+    this.obrisaneNamirnice.splice(index,1);
+  }
+
+  vratiNamirnicu(event:any){
+    this.namirnice.splice(event.index,0,event.namirnica);
+    this.obrisaneNamirnice.splice(event.index,1);
+    
   }
 
   resetujNamirnicu(){

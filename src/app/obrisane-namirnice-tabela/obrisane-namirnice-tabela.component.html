@@ -1,0 +1,26 @@
+<h3>Logicki obrisane namirnice</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Naziv</th>
+            <th>Cena</th>            
+            <th>Akcije</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let obrisanaNamirnica of obrisaneNamirnice;index as i">
+            <td>{{obrisanaNamirnica.id}}</td>
+            <td>{{obrisanaNamirnica.naziv}}</td>
+            <td>{{obrisanaNamirnica.cena}}</td>            
+            <td>
+                <button (click)="ukloniFizicki(i)">Fizicko brisanje</button>
+                <button (click)="vratiUNeobrisano(i,obrisanaNamirnica)">Vrati u neobrisano</button>
+            </td>
+        </tr>        
+    </tbody>
+
+</table>
+
